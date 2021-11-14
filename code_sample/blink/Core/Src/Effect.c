@@ -1,0 +1,586 @@
+#include "stm32f1xx_hal.h"
+#include "Effect.h"
+#include "stdint.h"
+
+uint16_t Speed = 100;
+
+void Turn_On_All_Led(void)
+{
+    CH_1_ON;
+    CH_2_ON;
+    CH_3_ON;
+    CH_4_ON;
+    CH_5_ON;
+    CH_6_ON;
+    CH_7_ON;
+    CH_8_ON;
+    CH_9_ON;
+    CH_10_ON;
+    CH_11_ON;
+    CH_12_ON;
+    CH_13_ON;
+    CH_14_ON;
+    CH_15_ON;
+    CH_16_ON;
+    CH_17_ON;
+    CH_18_ON;
+    CH_19_ON;
+    CH_20_ON;
+    CH_21_ON;
+    CH_22_ON;
+    CH_23_ON;
+    CH_24_ON;
+}
+
+void Turn_Off_All_Led(void)
+{
+    CH_1_OFF;
+    CH_2_OFF;
+    CH_3_OFF;
+    CH_4_OFF;
+    CH_5_OFF;
+    CH_6_OFF;
+    CH_7_OFF;
+    CH_8_OFF;
+    CH_9_OFF;
+    CH_10_OFF;
+    CH_11_OFF;
+    CH_12_OFF;
+    CH_13_OFF;
+    CH_14_OFF;
+    CH_15_OFF;
+    CH_16_OFF;
+    CH_17_OFF;
+    CH_18_OFF;
+    CH_19_OFF;
+    CH_20_OFF;
+    CH_21_OFF;
+    CH_22_OFF;
+    CH_23_OFF;
+    CH_24_OFF;
+}
+
+void turn_on_one_channel_from_right_to_left(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_Off_All_Led();
+        CH_1_ON;
+        HAL_Delay(Speed);
+        CH_2_ON;
+        HAL_Delay(Speed);
+        CH_3_ON;
+        HAL_Delay(Speed);
+        CH_4_ON;
+        HAL_Delay(Speed);
+        CH_5_ON;
+        HAL_Delay(Speed);
+        CH_6_ON;
+        HAL_Delay(Speed);
+        CH_7_ON;
+        HAL_Delay(Speed);
+        CH_8_ON;
+        HAL_Delay(Speed);
+        CH_9_ON;
+        HAL_Delay(Speed);
+        CH_10_ON;
+        HAL_Delay(Speed);
+        CH_11_ON;
+        HAL_Delay(Speed);
+        CH_12_ON;
+        HAL_Delay(Speed);
+        CH_13_ON;
+        HAL_Delay(Speed);
+        CH_14_ON;
+        HAL_Delay(Speed);
+        CH_15_ON;
+        HAL_Delay(Speed);
+        CH_16_ON;
+        HAL_Delay(Speed);
+        CH_17_ON;
+        HAL_Delay(Speed);
+        CH_18_ON;
+        HAL_Delay(Speed);
+        CH_19_ON;
+        HAL_Delay(Speed);
+        CH_20_ON;
+        HAL_Delay(Speed);
+        CH_21_ON;
+        HAL_Delay(Speed);
+        CH_22_ON;
+        HAL_Delay(Speed);
+        CH_23_ON;
+        HAL_Delay(Speed);
+        CH_24_ON;
+        HAL_Delay(Speed);
+    }
+}
+
+void turn_off_one_channel_from_right_to_left(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_On_All_Led();
+        CH_1_OFF;
+        HAL_Delay(Speed);
+        CH_2_OFF;
+        HAL_Delay(Speed);
+        CH_3_OFF;
+        HAL_Delay(Speed);
+        CH_4_OFF;
+        HAL_Delay(Speed);
+        CH_5_OFF;
+        HAL_Delay(Speed);
+        CH_6_OFF;
+        HAL_Delay(Speed);
+        CH_7_OFF;
+        HAL_Delay(Speed);
+        CH_8_OFF;
+        HAL_Delay(Speed);
+        CH_9_OFF;
+        HAL_Delay(Speed);
+        CH_10_OFF;
+        HAL_Delay(Speed);
+        CH_11_OFF;
+        HAL_Delay(Speed);
+        CH_12_OFF;
+        HAL_Delay(Speed);
+        CH_13_OFF;
+        HAL_Delay(Speed);
+        CH_14_OFF;
+        HAL_Delay(Speed);
+        CH_15_OFF;
+        HAL_Delay(Speed);
+        CH_16_OFF;
+        HAL_Delay(Speed);
+        CH_17_OFF;
+        HAL_Delay(Speed);
+        CH_18_OFF;
+        HAL_Delay(Speed);
+        CH_19_OFF;
+        HAL_Delay(Speed);
+        CH_20_OFF;
+        HAL_Delay(Speed);
+        CH_21_OFF;
+        HAL_Delay(Speed);
+        CH_22_OFF;
+        HAL_Delay(Speed);
+        CH_23_OFF;
+        HAL_Delay(Speed);
+        CH_24_OFF;
+        HAL_Delay(Speed);
+    }
+}
+
+void turn_on_only_one_channel_from_right_to_left(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_Off_All_Led();
+        CH_1_ON;
+        HAL_Delay(Speed);
+        CH_1_OFF;
+        CH_2_ON;
+        HAL_Delay(Speed);
+        CH_2_OFF;
+        CH_3_ON;
+        HAL_Delay(Speed);
+        CH_3_OFF;
+        CH_4_ON;
+        HAL_Delay(Speed);
+        CH_4_OFF;
+        CH_5_ON;
+        HAL_Delay(Speed);
+        CH_5_OFF;
+        CH_6_ON;
+        HAL_Delay(Speed);
+        CH_6_OFF;
+        CH_7_ON;
+        HAL_Delay(Speed);
+        CH_7_OFF;
+        CH_8_ON;
+        HAL_Delay(Speed);
+        CH_8_OFF;
+        CH_9_ON;
+        HAL_Delay(Speed);
+        CH_9_OFF;
+        CH_10_ON;
+        HAL_Delay(Speed);
+        CH_10_OFF;
+        CH_11_ON;
+        HAL_Delay(Speed);
+        CH_11_OFF;
+        CH_12_ON;
+        HAL_Delay(Speed);
+        CH_12_OFF;
+        CH_13_ON;
+        HAL_Delay(Speed);
+        CH_13_OFF;
+        CH_14_ON;
+        HAL_Delay(Speed);
+        CH_14_OFF;
+        CH_15_ON;
+        HAL_Delay(Speed);
+        CH_15_OFF;
+        CH_16_ON;
+        HAL_Delay(Speed);
+        CH_16_OFF;
+        CH_17_ON;
+        HAL_Delay(Speed);
+        CH_17_OFF;
+        CH_18_ON;
+        HAL_Delay(Speed);
+        CH_18_OFF;
+        CH_19_ON;
+        HAL_Delay(Speed);
+        CH_19_OFF;
+        CH_20_ON;
+        HAL_Delay(Speed);
+        CH_20_OFF;
+        CH_21_ON;
+        HAL_Delay(Speed);
+        CH_21_OFF;
+        CH_22_ON;
+        HAL_Delay(Speed);
+        CH_22_OFF;
+        CH_23_ON;
+        HAL_Delay(Speed);
+        CH_23_OFF;
+        CH_24_ON;
+        HAL_Delay(Speed);
+        CH_24_OFF;
+    }
+}
+
+void turn_off_only_one_channel_from_right_to_left(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_On_All_Led();
+        CH_1_OFF;
+        HAL_Delay(Speed);
+        CH_1_ON;
+        CH_2_OFF;
+        HAL_Delay(Speed);
+        CH_2_ON;
+        CH_3_OFF;
+        HAL_Delay(Speed);
+        CH_3_ON;
+        CH_4_OFF;
+        HAL_Delay(Speed);
+        CH_4_ON;
+        CH_5_OFF;
+        HAL_Delay(Speed);
+        CH_5_ON;
+        CH_6_OFF;
+        HAL_Delay(Speed);
+        CH_6_ON;
+        CH_7_OFF;
+        HAL_Delay(Speed);
+        CH_7_ON;
+        CH_8_OFF;
+        HAL_Delay(Speed);
+        CH_8_ON;
+        CH_9_OFF;
+        HAL_Delay(Speed);
+        CH_9_ON;
+        CH_10_OFF;
+        HAL_Delay(Speed);
+        CH_10_ON;
+        CH_11_OFF;
+        HAL_Delay(Speed);
+        CH_11_ON;
+        CH_12_OFF;
+        HAL_Delay(Speed);
+        CH_12_ON;
+        CH_13_OFF;
+        HAL_Delay(Speed);
+        CH_13_ON;
+        CH_14_OFF;
+        HAL_Delay(Speed);
+        CH_14_ON;
+        CH_15_OFF;
+        HAL_Delay(Speed);
+        CH_15_ON;
+        CH_16_OFF;
+        HAL_Delay(Speed);
+        CH_16_ON;
+        CH_17_OFF;
+        HAL_Delay(Speed);
+        CH_17_ON;
+        CH_18_OFF;
+        HAL_Delay(Speed);
+        CH_18_ON;
+        CH_19_OFF;
+        HAL_Delay(Speed);
+        CH_19_ON;
+        CH_20_OFF;
+        HAL_Delay(Speed);
+        CH_20_ON;
+        CH_21_OFF;
+        HAL_Delay(Speed);
+        CH_21_ON;
+        CH_22_OFF;
+        HAL_Delay(Speed);
+        CH_22_ON;
+        CH_23_OFF;
+        HAL_Delay(Speed);
+        CH_23_ON;
+        CH_24_OFF;
+        HAL_Delay(Speed);
+    }
+}
+
+void turn_on_two_channel_from_between_to_beside(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_Off_All_Led();
+        CH_12_ON;
+        CH_13_ON;
+        HAL_Delay(Speed);
+        CH_11_ON;
+        CH_14_ON;
+        HAL_Delay(Speed);
+        CH_10_ON;
+        CH_15_ON;
+        HAL_Delay(Speed);
+        CH_9_ON;
+        CH_16_ON;
+        HAL_Delay(Speed);
+        CH_8_ON;
+        CH_17_ON;
+        HAL_Delay(Speed);
+        CH_7_ON;
+        CH_18_ON;
+        HAL_Delay(Speed);
+        CH_6_ON;
+        CH_19_ON;
+        HAL_Delay(Speed);
+        CH_5_ON;
+        CH_20_ON;
+        HAL_Delay(Speed);
+        CH_4_ON;
+        CH_21_ON;
+        HAL_Delay(Speed);
+        CH_3_ON;
+        CH_22_ON;
+        HAL_Delay(Speed);
+        CH_2_ON;
+        CH_23_ON;
+        HAL_Delay(Speed);
+        CH_1_ON;
+        CH_24_ON;
+        HAL_Delay(Speed);
+    }
+}
+
+void turn_off_two_channel_from_between_to_beside(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_On_All_Led();
+        CH_12_OFF;
+        CH_13_OFF;
+        HAL_Delay(Speed);
+        CH_11_OFF;
+        CH_14_OFF;
+        HAL_Delay(Speed);
+        CH_10_OFF;
+        CH_15_OFF;
+        HAL_Delay(Speed);
+        CH_9_OFF;
+        CH_16_OFF;
+        HAL_Delay(Speed);
+        CH_8_OFF;
+        CH_17_OFF;
+        HAL_Delay(Speed);
+        CH_7_OFF;
+        CH_18_OFF;
+        HAL_Delay(Speed);
+        CH_6_OFF;
+        CH_19_OFF;
+        HAL_Delay(Speed);
+        CH_5_OFF;
+        CH_20_OFF;
+        HAL_Delay(Speed);
+        CH_4_OFF;
+        CH_21_OFF;
+        HAL_Delay(Speed);
+        CH_3_OFF;
+        CH_22_OFF;
+        HAL_Delay(Speed);
+        CH_2_OFF;
+        CH_23_OFF;
+        HAL_Delay(Speed);
+        CH_1_OFF;
+        CH_24_OFF;
+        HAL_Delay(Speed);
+    }
+}
+
+void turn_on_two_channel_from_beside_to_between(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_Off_All_Led();
+        CH_1_ON;
+        CH_24_ON;
+        HAL_Delay(Speed);
+        CH_2_ON;
+        CH_23_ON;
+        HAL_Delay(Speed);
+        CH_3_ON;
+        CH_22_ON;
+        HAL_Delay(Speed);
+        CH_4_ON;
+        CH_21_ON;
+        HAL_Delay(Speed);
+        CH_5_ON;
+        CH_20_ON;
+        HAL_Delay(Speed);
+        CH_6_ON;
+        CH_19_ON;
+        HAL_Delay(Speed);
+        CH_7_ON;
+        CH_18_ON;
+        HAL_Delay(Speed);
+        CH_8_ON;
+        CH_17_ON;
+        HAL_Delay(Speed);
+        CH_9_ON;
+        CH_16_ON;
+        HAL_Delay(Speed);
+        CH_10_ON;
+        CH_15_ON;
+        HAL_Delay(Speed);
+        CH_11_ON;
+        CH_14_ON;
+        HAL_Delay(Speed);
+        CH_12_ON;
+        CH_13_ON;
+        HAL_Delay(Speed);
+    }
+}
+
+void turn_off_two_channel_from_beside_to_between(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_On_All_Led();
+        CH_1_OFF;
+        CH_24_OFF;
+        HAL_Delay(Speed);
+        CH_2_OFF;
+        CH_23_OFF;
+        HAL_Delay(Speed);
+        CH_3_OFF;
+        CH_22_OFF;
+        HAL_Delay(Speed);
+        CH_4_OFF;
+        CH_21_OFF;
+        HAL_Delay(Speed);
+        CH_5_OFF;
+        CH_20_OFF;
+        HAL_Delay(Speed);
+        CH_6_OFF;
+        CH_19_OFF;
+        HAL_Delay(Speed);
+        CH_7_OFF;
+        CH_18_OFF;
+        HAL_Delay(Speed);
+        CH_8_OFF;
+        CH_17_OFF;
+        HAL_Delay(Speed);
+        CH_9_OFF;
+        CH_16_OFF;
+        HAL_Delay(Speed);
+        CH_10_OFF;
+        CH_15_OFF;
+        HAL_Delay(Speed);
+        CH_11_OFF;
+        CH_14_OFF;
+        HAL_Delay(Speed);
+        CH_12_OFF;
+        CH_13_OFF;
+        HAL_Delay(Speed);
+    }
+}
+
+void blink_interleaved(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        CH_1_OFF;
+        CH_3_OFF;
+        CH_5_OFF;
+        CH_7_OFF;
+        CH_9_OFF;
+        CH_11_OFF;
+        CH_13_OFF;
+        CH_15_OFF;
+        CH_17_OFF;
+        CH_19_OFF;
+        CH_21_OFF;
+        CH_23_OFF;
+        CH_2_ON;
+        CH_4_ON;
+        CH_6_ON;
+        CH_8_ON;
+        CH_10_ON;
+        CH_12_ON;
+        CH_14_ON;
+        CH_16_ON;
+        CH_18_ON;
+        CH_20_ON;
+        CH_22_ON;
+        CH_24_ON;
+        HAL_Delay(Speed);
+        CH_1_ON;
+        CH_3_ON;
+        CH_5_ON;
+        CH_7_ON;
+        CH_9_ON;
+        CH_11_ON;
+        CH_13_ON;
+        CH_15_ON;
+        CH_17_ON;
+        CH_19_ON;
+        CH_21_ON;
+        CH_23_ON;
+        CH_2_OFF;
+        CH_4_OFF;
+        CH_6_OFF;
+        CH_8_OFF;
+        CH_10_OFF;
+        CH_12_OFF;
+        CH_14_OFF;
+        CH_16_OFF;
+        CH_18_OFF;
+        CH_20_OFF;
+        CH_22_OFF;
+        CH_24_OFF;
+        HAL_Delay(Speed);
+    }
+}
+
+void blink_all(uint8_t numberOfRepeat)
+{
+    uint8_t i;
+    for (i = 0; i < numberOfRepeat; i++)
+    {
+        Turn_On_All_Led();
+        HAL_Delay(Speed);
+        Turn_Off_All_Led();
+        HAL_Delay(Speed);
+    }
+}
